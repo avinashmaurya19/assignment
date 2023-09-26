@@ -5,16 +5,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
           Stack(
             children: [
               Container(
-                margin: const EdgeInsets.all(50),
-                height: MediaQuery.of(context).size.height - 200,
-                width: MediaQuery.of(context).size.width - 100,
-                // color: Colors.orangeAccent.shade700,
+                margin: const EdgeInsets.only(
+                    top: 50, left: 50, bottom: 50, right: 50),
+                height: size.height * 0.8,
+                width: size.width * 0.8,
                 decoration: const BoxDecoration(
                   color: Color(0xffef8a88),
                   borderRadius: BorderRadius.only(
@@ -24,74 +25,75 @@ class HomeScreen extends StatelessWidget {
                     bottomRight: Radius.circular(15),
                   ),
                 ),
-
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Breakfast',
-                          style: TextStyle(
-                            fontSize: 35,
-                            color: Colors.white,
-                          ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 50, top: 100),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Breakfast',
+                        style: TextStyle(
+                          fontSize: 45,
+                          color: Colors.white,
                         ),
-                        SizedBox(
-                          height: 23,
-                        ),
-                        Text(
-                          textAlign: TextAlign.start,
-                          'Bread,',
-                          style: TextStyle(fontSize: 27, color: Colors.white),
-                        ),
-                        Text(
-                          'Peanut buttter,',
-                          style: TextStyle(fontSize: 27, color: Colors.white),
-                        ),
-                        Text(
-                          'Apple,',
-                          style: TextStyle(fontSize: 27, color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 40,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 70,
-                    ),
-                    Text.rich(
-                      TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: const [
-                          TextSpan(
-                            text: '525 ',
-                            style: TextStyle(
-                                fontSize: 50, // Adjust the font size as needed
-                                fontWeight:
-                                    FontWeight.bold, // Optionally, make it bold
-                                color: Colors
-                                    .white, // Optionally, set the text color
-                                decoration: TextDecoration.none),
-                          ),
-                          TextSpan(
-                            text: 'kcal',
-                            style: TextStyle(
-                                fontSize: 20, // Adjust the font size as needed
-                                fontWeight: FontWeight
-                                    .normal, // Optionally, set the font weight
-                                color: Colors
-                                    .white70, // Optionally, set the text color
-                                decoration: TextDecoration.none),
-                          ),
-                        ],
                       ),
-                    )
-                  ],
+                      SizedBox(
+                        height: size.height * 0.019,
+                      ),
+                      const Text(
+                        textAlign: TextAlign.start,
+                        'Bread,',
+                        style: TextStyle(fontSize: 30, color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.01,
+                      ),
+                      const Text(
+                        'Peanut buttter,',
+                        style: TextStyle(fontSize: 30, color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.01,
+                      ),
+                      const Text(
+                        'Apple,',
+                        style: TextStyle(fontSize: 30, color: Colors.white),
+                      ),
+                      const SizedBox(
+                        height: 200,
+                      ),
+                      Text.rich(
+                        TextSpan(
+                          style: DefaultTextStyle.of(context).style,
+                          children: const [
+                            TextSpan(
+                              text: '525 ',
+                              style: TextStyle(
+                                  fontSize:
+                                      50, // Adjust the font size as needed
+                                  fontWeight: FontWeight
+                                      .bold, // Optionally, make it bold
+                                  color: Colors
+                                      .white, // Optionally, set the text color
+                                  decoration: TextDecoration.none),
+                            ),
+                            TextSpan(
+                              text: 'kcal',
+                              style: TextStyle(
+                                  fontSize:
+                                      20, // Adjust the font size as needed
+                                  fontWeight: FontWeight
+                                      .normal, // Optionally, set the font weight
+                                  color: Colors
+                                      .white70, // Optionally, set the text color
+                                  decoration: TextDecoration.none),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Positioned(
